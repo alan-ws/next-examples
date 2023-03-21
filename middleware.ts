@@ -23,7 +23,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (me) {
-    url.pathname = "/400";
+    url.pathname = "/404";
     return NextResponse.rewrite(url);
   }
 
