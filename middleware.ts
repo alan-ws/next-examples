@@ -24,7 +24,7 @@ export async function middleware(req: NextRequest) {
 
   if (me) {
     url.pathname = "/404";
-    return NextResponse.rewrite(url, { status: 404 });
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();
