@@ -6,20 +6,23 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
+  const url = req.nextUrl.clone();
+  const { pathname, host, protocol } = url;
+
   const re = ["random", "two"];
   let me = false;
 
   if (re) {
     re.forEach((elem) => {
-      if (req.nextUrl.pathname.includes(elem)) {
+      if (pathname.includes(elem)) {
         me = true;
       }
     });
   }
 
   if (me) {
-    req.nextUrl.pathname = "/400";
-    return NextResponse.rewrite(req.nextUrl);
+    url.pathname = "/400";
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();
