@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export const config = {
-  matcher: "/random",
+  matcher: [
+    "/((?!api|_next/static|evolok|site.webmanifest|icons|pushly|hfm/_next/static|hfm/icons).*)",
+  ],
 };
 
 export async function middleware(req: NextRequest) {
