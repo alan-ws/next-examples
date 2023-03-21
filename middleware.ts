@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
   const { pathname, host, protocol } = url;
 
-  const re = ["random", "two"];
+  const re = ["random", "two", "asd"];
   let me = false;
 
   if (re) {
@@ -24,7 +24,7 @@ export async function middleware(req: NextRequest) {
 
   if (me) {
     url.pathname = "/404";
-    return NextResponse.rewrite(url, { status: 404 });
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();
