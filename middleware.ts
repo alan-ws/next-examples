@@ -20,6 +20,8 @@ export async function middleware(req: NextRequest) {
       }
     });
   }
+  req.nextUrl.pathname = "/400";
+  return NextResponse.rewrite(req.nextUrl);
 
-  return NextResponse.rewrite(req.nextUrl, { status: 404 });
+  //   return NextResponse.rewrite(req.nextUrl, { status: 404 });
 }
