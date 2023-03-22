@@ -8,7 +8,7 @@ export default function Home() {
         height={716}
         width={477}
         alt="train"
-        unoptimized={true}
+        unoptimized={false}
       />
       <Image
         src={"/train.jpg"}
