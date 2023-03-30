@@ -6,10 +6,10 @@ export default function Page() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(router);
-    console.log(document.referrer)
-    console.log(window.history)
-    console.log(history.state)
+      console.log(document.referrer)
+    // console.log(router);
+    // console.log(window.history)
+    // console.log(history.state)
   }, [router]);
 
   return (
